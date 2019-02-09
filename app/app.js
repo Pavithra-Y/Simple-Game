@@ -21,6 +21,20 @@ app.controller('tasksController', function($scope, $http) {
       });
     }
   };
+  
+  $scope.winTask = function (task) {
+    $http.post("ajax/winTask.php?task="+task).success(function(data){
+        finwin();
+        $scope.taskInput = "";
+      });
+  };
+  
+  $scope.fightTask = function (task) {
+  $http.post("ajax/fightTask.php?task="+task).success(function(data){
+        fightwin();
+        $scope.taskInput = "";
+      });
+  };
 
   $scope.toggleStatus = function(item, status, task) {
     if(status=='2'){status='0';}else{status='2';}
