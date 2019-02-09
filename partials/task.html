@@ -1,0 +1,37 @@
+<div class="widget-box" id="recent-box" ng-controller="tasksController" style="width:600px;">
+<div class="widget-header header-color-blue">
+<div class="row">
+<div class="col-sm-6">
+<h4 class="bigger lighter">
+	<i class="glyphicon glyphicon-user"></i>&nbsp;
+	ADD NEW HERO
+</h4>
+</div>
+<div class="col-sm-3" style="float:right;">
+<button ng-click="addNewClicked=!addNewClicked;" class="btn btn-sm btn-danger header-elements-margin"><i class="glyphicon  glyphicon-plus"></i>&nbsp;Add New Hero</button>
+</div>
+<div class="col-sm-3">
+
+
+</div>
+</div></div>
+<div class="widget-body ">
+<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task">
+<div class="form-actions">
+<div class="input-group">
+<input type="text" class="form-control" name="comment" ng-model="taskInput" placeholder="Add New Hero" ng-focus="addNewClicked">
+<div class="input-group-btn">
+<button class="btn btn-default" type="submit" ng-click="addTask(taskInput)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add New Hero</button>
+</div>
+</div>
+</div>
+</form>
+<div class="task">
+	<label class="checkbox" ng-repeat="task in tasks | filter : filterTask">
+ 
+	<span ng-class="{strike:task.STATUS==2}">{{task.TASK}} [{{task.ID}}]</span>
+	<a ng-click="deleteTask(task.ID)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
+    </label>
+</div>
+</div>
+</div>
