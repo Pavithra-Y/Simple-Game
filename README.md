@@ -9,3 +9,5 @@ When you click on fight to death button 2 random hero's are choosed and fight oc
 Become Champion button shows one Hero with the top high scorer in the matches.
 
 (In Database if status of hero is 0 then alive if it is 1 then dead)
+
+Note: Please click on each of the buttons to see the results.
