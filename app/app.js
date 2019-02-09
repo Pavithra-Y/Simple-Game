@@ -8,6 +8,20 @@ app.controller('tasksController', function($scope, $http) {
         $scope.tasks = data;
        });
   };
+  
+  
+  function fightwin(){  
+  $http.post("ajax/fightwin.php").success(function(data){
+        $scope.tasks = data;
+       });
+  };
+  
+  function finwin(){  
+  $http.post("ajax/finwin.php").success(function(data){
+        $scope.tasks = data;
+       });
+  };
+  
   $scope.addTask = function (task) {
     $http.post("ajax/addTask.php?task="+task).success(function(data){
         getTask();
