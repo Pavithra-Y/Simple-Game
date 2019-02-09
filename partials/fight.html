@@ -19,7 +19,11 @@
 <div class="widget-body ">
 
 <div class="task">
-
+	<label class="checkbox" ng-repeat="task in tasks | filter : filterTask">
+ 
+	<span ng-class="{strike:task.STATUS==2}">{{task.TASK}} [{{task.ID}}]</span>
+	
+    </label>
 </div>
 </div>
 </div>
